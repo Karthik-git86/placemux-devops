@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: placemux-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: placemux-app
+  template:
+    metadata:
+      labels:
+        app: placemux-app
+    spec:
+      containers:
+      - name: placemux-app
+        image: placemux-app:v1
+        ports:
+        - containerPort: 3000
